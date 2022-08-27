@@ -244,12 +244,11 @@ def update_table_click(data):
             if url.endswith(".csv"):
                 return True, tools.create_table_csv(url, n_rows=20), "Sample data for file " + label
             elif url.endswith(".geojson"):
-                url = 'https://raw.githubusercontent.com/shawnbot/topogram/master/data/us-states.geojson'
+                #url = 'https://raw.githubusercontent.com/shawnbot/topogram/master/data/us-states.geojson'
 
-                # response = urlopen(url)
-                # data_json = json.loads(response.read())
-                # data_json["features"] =  data_json["features"][:10]
-                # print(len(data_json["features"]))
+                response = urlopen(url)
+                data_json = json.loads(response.read())
+                data_json["features"] =  data_json["features"][:30]
 
                 # data_json_basic = []
                 # for f in data_json["features"]:
@@ -260,8 +259,8 @@ def update_table_click(data):
                 #{"lat":c[0], "lon": c[1]} for c in f["geometry"]["coordinates"]
                 #print(data_json)
 
-                #return True, dl.Map(children=[dl.GeoJSON(url=url, id="geojson")], style={'width': '1000px', 'height': '500px'}), url
-                return True, dl.Map(children=[dl.TileLayer()] + [dl.GeoJSON(url=url, id="geojson")], style={'width': '1000px', 'height': '500px'}), url
+                #return True, dl.Map(dl.GeoJSON(data=data_json, id="geojson"), style={'width': '1000px', 'height': '500px'}), url
+                return True, dl.Map(children=[dl.TileLayer()] + [dl.GeoJSON(data=data_json, id="geojson")], style={'width': '1000px', 'height': '500px'}), url
 
             
             else:
