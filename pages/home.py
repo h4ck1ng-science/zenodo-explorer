@@ -90,9 +90,9 @@ def generate_link(n_clicks):
         return random.choice(
             [
                 "https://zenodo.org/record/5887261",
-                "https://zenodo.org/record/3694065",
-                "https://zenodo.org/record/5796200",
-                "https://zenodo.org/record/3631254",
+                # "https://zenodo.org/record/3694065",
+                # "https://zenodo.org/record/5796200",
+                # "https://zenodo.org/record/3631254",
             ]
         )
     return dash.no_update
