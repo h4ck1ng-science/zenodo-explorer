@@ -22,9 +22,10 @@ default_stylesheet = [
             "width": "mapData(size, 0, 4, 20, 60)",
             "height": "mapData(size, 0, 4, 20, 60)",
             "content": "data(label)",
-            "font-size": "12px",
+            "font-size": "11px",
             "text-valign": "center",
             "text-halign": "center",
+            "color": "white",
         },
     }
 ]
