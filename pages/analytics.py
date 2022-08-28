@@ -165,7 +165,7 @@ layout = (
                         ),
                         dcc.Link(
                             children=dmc.Button(
-                                "Back to main page", variant="outline", color="orange"
+                                "Back to main page", variant="outline", color="yellow"
                             ),
                             href="/",
                             style={"position": "absolute", "bottom": "5rem", "right": "5rem"},
